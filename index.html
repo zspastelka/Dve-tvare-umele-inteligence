@@ -17,8 +17,17 @@ body{font-family:Arial,sans-serif;background:#f4f6f8;margin:0;padding:20px}
 .header-center h1{margin:0}
 .header-center h2{margin:5px 0 0;font-size:18px;color:#555;font-weight:400}
 .header-right{text-align:right}
-#method{background:#eef3ff;border-left:6px solid #4a90e2;padding:15px;margin:20px 0}
-#method p{margin:7px 0 0}
+#method{background:#eef3ff;border-left:6px solid #4a90e2;padding:17px 20px;margin:20px 0}
+#method p{margin:7px 0 0;line-height:1.55}
+.method-label{display:block;margin-top:13px}
+#summary{margin:32px 0 24px;padding:22px 24px;background:#fff;border-radius:10px;border:1px solid #e2e8f0}
+#summary h2{margin:0 0 10px;font-size:1.35em}
+#summary p{margin:0;line-height:1.65;color:#444}
+.closing{margin:22px 0 28px;text-align:center;font-weight:700;color:#334155;line-height:1.6}
+.footer{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;border-top:1px solid #d8dee8;padding:18px 0 5px;margin-top:25px;color:#555;font-size:14px}
+.footer a{color:#0645ad;text-decoration:none;font-weight:700}
+.footer a:hover{text-decoration:underline}
+@media(max-width:650px){#summary{padding:18px}.footer{flex-direction:column;align-items:flex-start}}
 .section-title{margin:20px 0;font-size:1.5em;color:inherit}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
 .case{background:white;padding:10px;border-radius:10px;text-align:center}
@@ -43,7 +52,7 @@ body{font-family:Arial,sans-serif;background:#f4f6f8;margin:0;padding:20px}
 <div class="page">
   <div class="header">
     <div class="header-left">
-      <img src="logo-o2-chytra-skola.png">
+      <img src="logo-o2-chytra-skola.png" alt="O2 Chytrá škola">
       <div class="support-text">Podpořeno z programu O2 Chytrá škola.</div>
     </div>
     <div class="header-center">
@@ -53,10 +62,12 @@ body{font-family:Arial,sans-serif;background:#f4f6f8;margin:0;padding:20px}
     <div class="header-right"><img src="logo-zs-pastelka.png" alt="ZŠ a MŠ Pastelka"></div>
   </div>
 
-  <div id="method">
-    <b>Jak jsme pracovali:</b>
+  <section id="method" aria-label="O výstavě a způsobu práce">
+    <b>O výstavě:</b>
+    <p>Tato výstava představuje pohled žáků na dvě tváře umělé inteligence. Jejím cílem bylo ukázat, že AI nabízí řadu užitečných možností, ale zároveň přináší rizika, o kterých je důležité přemýšlet.</p>
+    <b class="method-label">Jak jsme pracovali:</b>
     <p>Žáci se zamýšleli nad tím, jak umělá inteligence ovlivňuje náš každodenní život. Ve vlastních plakátech zachytili její možnosti, příležitosti i rizika – od pomoci při práci a tvorbě až po manipulaci, deepfake a otázky důvěryhodnosti informací.</p>
-  </div>
+  </section>
 
   <div class="grid" id="board">
     <article class="case"><h3>Plakát 1</h3><img src="img/01.jpg" alt="Žákovský plakát: AI v pracovním světě" loading="lazy"><p class="case-caption">AI v pracovním světě</p></article>
@@ -72,7 +83,17 @@ body{font-family:Arial,sans-serif;background:#f4f6f8;margin:0;padding:20px}
     <article class="case"><h3>Plakát 11</h3><img src="img/12.jpg" alt="Žákovský plakát: Umělá inteligence a budoucnost práce" loading="lazy"><p class="case-caption">Umělá inteligence a budoucnost práce</p></article>
   </div>
 
+  <section id="summary" aria-labelledby="summary-title">
+    <h2 id="summary-title">Co nám plakáty ukázaly?</h2>
+    <p>Umělá inteligence nám může usnadnit práci, pomáhat s tvorbou a otevírat nové možnosti. Zároveň ale přináší rizika, která bychom neměli přehlížet. Ne všechno, co vidíme nebo čteme, musí být skutečné. Důležité proto je přemýšlet, ověřovat informace a používat umělou inteligenci s rozvahou.</p>
+  </section>
 
+  <p class="closing">Dokážeme vždy poznat, co vytvořil člověk a co umělá inteligence?</p>
+
+  <footer class="footer">
+    <span>Výstava žákovských plakátů · AI na Pastelce · 2026</span>
+    <a href="https://zspastelka.github.io/ai-na-pastelce/">← Zpět na projekt AI na Pastelce</a>
+  </footer>
 </div>
 
 <div id="viewer" role="dialog" aria-modal="true" aria-label="Zvětšený plakát">
